@@ -59,7 +59,6 @@ cnoreabbrev <expr> X (getcmdtype() is# ':' && getcmdline() is# 'X') ? 'x' : 'X'
 
 call plug#begin()
 
-Plug 'chriskempson/base16-vim'
 Plug 'neomake/neomake'
 Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
