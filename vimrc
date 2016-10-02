@@ -71,8 +71,8 @@ Plug 'scrooloose/nerdtree'
 
 "<-- AUTOCOMPLETION PLUGINS START HERE /-/-/-/-/-/-/-/-/-/-/-/-->
 Plug 'ervandew/supertab'
-Plug 'shougo/neocomplete.vim'
-Plug 'rip-rip/clang_complete'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-clang'
 Plug 'rkulla/pydiction'
 Plug 'raimondi/delimitmate'
 
@@ -115,16 +115,13 @@ let g:lightline = {
       \ },
       \ }
 
-"<-- NEOCOMPLETE STUFF HERE -->
+"<-- DEOPLETE STUFF HERE -->
 let g:SuperTabDefaultCompletionType = "<c-n>"
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-let g:clang_library_path = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib"
-if !exists('g:neocomplete#force_omni_input_patterns')
-     let g:neocomplete#force_omni_input_patterns = {}
-endif
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#clang#libclang_path = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib"
+let g:deoplete#sources#clang#clang_header = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.0.0/include/"
 let g:pydiction_location = '~/.vim/plugged/pydiction/complete-dict'
-"<-- NEOCOMPLETE STUFF ENDS HERE -->
+"<-- DEOPLETE STUFF ENDS HERE -->
 
 map <C-p> :Files<CR>
 
