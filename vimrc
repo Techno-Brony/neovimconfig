@@ -60,7 +60,7 @@ cnoreabbrev <expr> X (getcmdtype() is# ':' && getcmdline() is# 'X') ? 'x' : 'X'
 call plug#begin()
 
 Plug 'chriskempson/base16-vim'
-Plug 'scrooloose/syntastic'
+Plug 'neomake/neomake'
 Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
 Plug 'airblade/vim-gitgutter'
@@ -86,11 +86,7 @@ call plug#end()
 
 colorscheme base16-google-dark
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_check_on_wq = 0
+autocmd BufWrite * :Neomake
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
