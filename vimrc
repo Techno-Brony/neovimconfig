@@ -1,8 +1,7 @@
 "<-- VIM TRAINING WHEELS START HERE /-/-/-/-/-/-/-/-/-/-/-/-/-/-->
 
 map <up> <nop>
-map <down> <nop>
-map <left> <nop>
+map <down> <nop> map <left> <nop>
 map <right> <nop>
 imap <up> <nop>
 imap <down> <nop>
@@ -60,8 +59,6 @@ cnoreabbrev <expr> X (getcmdtype() is# ':' && getcmdline() is# 'X') ? 'x' : 'X'
 call plug#begin()
 
 Plug 'neomake/neomake'
-Plug 'tpope/vim-fugitive'
-Plug 'easymotion/vim-easymotion'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -72,12 +69,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'ervandew/supertab'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-clang'
-Plug 'rkulla/pydiction'
-Plug 'raimondi/delimitmate'
 
 "<-- SYNTAX HIGHLIGHTING PLUGINS START HERE /-/-/-/-/-/-/-/-/-/-->
 Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'hdima/python-syntax'
 
 call plug#end()
 
@@ -116,7 +110,6 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#clang#libclang_path = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib"
 let g:deoplete#sources#clang#clang_header = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.0.0/include/"
-let g:pydiction_location = '~/.vim/plugged/pydiction/complete-dict'
 "<-- DEOPLETE STUFF ENDS HERE -->
 
 map <C-p> :Files<CR>
