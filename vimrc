@@ -77,7 +77,11 @@ call plug#end()
 
 "<-- PLUGIN LIST ENDS HERE -/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-->
 
-colorscheme base16-google-dark
+colorscheme base16-onedark
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 autocmd! BufWritePost,BufEnter * Neomake
 
