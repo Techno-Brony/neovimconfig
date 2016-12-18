@@ -1,17 +1,4 @@
-"<-- VIM TRAINING WHEELS START HERE /-/-/-/-/-/-/-/-/-/-/-/-/-/-->
-
-map <up> <nop>
-map <down> <nop> map <left> <nop>
-map <right> <nop>
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
-
-"<-- VIM TRAINING WHEELS END HERE /-/-/-/-/-/-/-/-/-/-/-/-/-/-/-->
-
 "<-- ORIGINAL VIM SETTINGS START HERE /-/-/-/-/-/-/-/-/-/-/-/-/-->
-
 filetype indent on
 
 set autoindent
@@ -19,11 +6,13 @@ set expandtab
 set softtabstop=4
 set tabstop=4
 set shiftwidth=4
+set history=1000
 
 "<-- ESSENTIAL STUFF HERE -->
 ino jk <esc>
 vno v <esc>
 nnoremap ; :
+nnoremap : ;
 set relativenumber
 set showcmd
 syntax enable
@@ -36,11 +25,10 @@ autocmd InsertLeave * :set relativenumber | :set nonumber
 let mapleader = ","
 set backspace=2
 
-nmap <silent> <C-h> :wincmd h<CR>
-nmap <silent> <C-j> :wincmd j<CR>
-nmap <silent> <C-k> :wincmd k<CR>
-nmap <silent> <C-l> :wincmd l<CR>
-nmap <C-v> "+p
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-l> :wincmd l<CR>
 
 set copyindent
 set smartcase
@@ -51,6 +39,8 @@ set title
 set background=dark
 
 cnoreabbrev <expr> X (getcmdtype() is# ':' && getcmdline() is# 'X') ? 'x' : 'X'
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
 
 "<-- ORIGINAL VIM SETTINGS END HERE /-/-/-/-/-/-/-/-/-/-/-/-/-/-->
 
@@ -110,14 +100,10 @@ let g:lightline = {
       \ }
 
 "<-- DEOPLETE STUFF HERE -->
-let g:SuperTabDefaultCompletionType = "<c-n>"
+let g:SuperTabDefaultCompletionType = "context"
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#clang#libclang_path = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib"
 let g:deoplete#sources#clang#clang_header = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.0.0/include/"
 "<-- DEOPLETE STUFF ENDS HERE -->
 
 map <C-p> :Files<CR>
-
-nmap <Leader>gs :Gstatus<CR>
-nmap <Leader>gc :Gcommit<CR>
-nmap <Leader>gp :Gpush<CR>
