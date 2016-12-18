@@ -10,25 +10,20 @@ set history=1000
 
 "<-- ESSENTIAL STUFF HERE -->
 ino jk <esc>
-vno v <esc>
 nnoremap ; :
-nnoremap : ;
-set relativenumber
-set showcmd
 syntax enable
-
 "<-- ESSENTIAL STUFF END HERE -->
+nnoremap : ;
+set showcmd
+set relativenumber
+
+nnoremap <C-h> :wincmd h<CR>
+nnoremap <C-l> :wincmd l<CR>
 
 autocmd InsertEnter * :set number | :set norelativenumber
 autocmd InsertLeave * :set relativenumber | :set nonumber
 
-let mapleader = ","
 set backspace=2
-
-nmap <silent> <c-h> :wincmd h<CR>
-nmap <silent> <c-j> :wincmd j<CR>
-nmap <silent> <c-k> :wincmd k<CR>
-nmap <silent> <c-l> :wincmd l<CR>
 
 set copyindent
 set smartcase
@@ -106,4 +101,4 @@ let g:deoplete#sources#clang#libclang_path = "/Applications/Xcode.app/Contents/D
 let g:deoplete#sources#clang#clang_header = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.0.0/include/"
 "<-- DEOPLETE STUFF ENDS HERE -->
 
-map <C-p> :Files<CR>
+noremap <C-p> :Files<CR>
