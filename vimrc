@@ -26,11 +26,10 @@ autocmd InsertLeave * :set relativenumber | :set nonumber
 set backspace=2
 
 set copyindent
-set smartcase
 set smarttab
+set ignorecase
 set smartcase
 set title
-set spell
 set spelllang=en_nz
 
 set background=dark
