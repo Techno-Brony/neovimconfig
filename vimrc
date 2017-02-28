@@ -23,7 +23,6 @@ nnoremap <C-l> :wincmd l<CR>
 
 autocmd InsertEnter * :set number | :set norelativenumber
 autocmd InsertLeave * :set relativenumber | :set nonumber
-
 set backspace=2
 
 set copyindent
@@ -46,16 +45,16 @@ runtime macros/matchit.vim
 
 call plug#begin()
 
-Plug 'neomake/neomake'
+" Plug 'neomake/neomake'
 Plug 'airblade/vim-gitgutter'
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 
 "<-- AUTOCOMPLETION PLUGINS START HERE /-/-/-/-/-/-/-/-/-/-/-/-->
-Plug 'ervandew/supertab'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-clang'
+" Plug 'ervandew/supertab'
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'zchee/deoplete-clang'
 
 "<-- SYNTAX HIGHLIGHTING PLUGINS START HERE /-/-/-/-/-/-/-/-/-/-->
 Plug 'octol/vim-cpp-enhanced-highlight'
@@ -70,7 +69,7 @@ if filereadable(expand("~/.vimrc_background"))
   source ~/.vimrc_background
 endif
 
-autocmd! BufWritePost,BufEnter * Neomake
+" autocmd! BufWritePost,BufEnter * Neomake
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -97,10 +96,10 @@ let g:lightline = {
       \ }
 
 "<-- DEOPLETE STUFF HERE -->
-let g:SuperTabDefaultCompletionType = "context"
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources#clang#libclang_path = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib"
-let g:deoplete#sources#clang#clang_header = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.0.0/include/"
+" let g:SuperTabDefaultCompletionType = "context"
+" let g:deoplete#enable_at_startup = 1
+" let g:deoplete#sources#clang#libclang_path = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib"
+" let g:deoplete#sources#clang#clang_header = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/8.0.0/include/"
 "<-- DEOPLETE STUFF ENDS HERE -->
 
 noremap <C-p> :Files<CR>
