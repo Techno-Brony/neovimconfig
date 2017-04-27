@@ -14,7 +14,6 @@ nnoremap ; :
 syntax enable
 set nocompatible
 "<-- ESSENTIAL STUFF END HERE -->
-nnoremap : ;
 set showcmd
 set relativenumber
 
