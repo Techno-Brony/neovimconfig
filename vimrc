@@ -49,6 +49,7 @@ Plug 'airblade/vim-gitgutter'
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-surround'
 
 "<-- AUTOCOMPLETION PLUGINS START HERE /-/-/-/-/-/-/-/-/-/-/-/-->
 " Plug 'ervandew/supertab'
@@ -57,6 +58,7 @@ Plug 'scrooloose/nerdtree'
 
 "<-- SYNTAX HIGHLIGHTING PLUGINS START HERE /-/-/-/-/-/-/-/-/-/-->
 Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'neovimhaskell/haskell-vim'
 
 call plug#end()
 
