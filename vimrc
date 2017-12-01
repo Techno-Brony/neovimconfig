@@ -59,6 +59,7 @@ Plug 'tpope/vim-surround'
 "<-- SYNTAX HIGHLIGHTING PLUGINS START HERE /-/-/-/-/-/-/-/-/-/-->
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'neovimhaskell/haskell-vim'
+Plug 'andrewmacp/llvm.vim'
 
 call plug#end()
 
